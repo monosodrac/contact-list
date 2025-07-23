@@ -1,21 +1,38 @@
-import FiltroCard from "../../components/FiltroCard";
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
+import { RootReducer } from '../../store'
+import { alterarTermo } from '../../store/reducers/filtro'
+import { Botao, Campo } from '../../styles'
 import * as S from './styles'
 
-const BarraLateral = () => (
-    <S.Aside>
-        <div>
-            <S.Campo type="text" placeholder="Buscar" />
-            <S.Filtros>
-                <FiltroCard />
-                <FiltroCard />
-                <FiltroCard />
-                <FiltroCard />
-                <FiltroCard />
-                <FiltroCard ativo />
-            </S.Filtros>
-        </div>
-    </S.Aside>
-);
+type Props = {
+    mostrarFiltros: boolean
+}
 
-export default BarraLateral;
+const BarraLateral = ({ mostrarFiltros }: Props) => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const { termo } = useSelector((state: RootReducer) => state.filtro)
+
+    return (
+        <S.Aside>
+            <div>
+                {mostrarFiltros ? (
+                    <>
+                        <Campo
+                            type="text"
+                            placeholder="Buscar"
+                            value={termo}
+                            onChange={(evento) => dispatch(alterarTermo(evento.target.value))}
+                        />
+                    </>
+                ) : (
+                    <Botao onClick={() => navigate('/')}>Voltar a lista de contatos</Botao>
+                )}
+            </div>
+        </S.Aside>
+    )
+}
+
+export default BarraLateral
