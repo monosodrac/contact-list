@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
+# 📇 Lista de Contatos – React + Vite + Redux + Styled-Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação web para gerenciamento de contatos, desenvolvida com **React** e **Vite**. A aplicação permite **adicionar**, **editar** e **remover** contatos com campos de **nome**, **e-mail** e **telefone**. O gerenciamento de estado é feito com **Redux**, e o layout é estilizado com **styled-components**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+- ✅ Adicionar novos contatos com nome, e-mail e telefone  
+- ✅ Editar contatos existentes  
+- ✅ Remover contatos da lista  
+- ✅ Gerenciamento de estado global com React Redux  
+- ✅ Estilização com styled-components  
+- ✅ Interface limpa e intuitiva  
+- ✅ Projeto inicializado com Vite para desenvolvimento ágil
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- [React](https://react.dev/)  
+- [Vite](https://vitejs.dev/)  
+- [Redux](https://redux.js.org/)  
+- [React Redux](https://react-redux.js.org/)  
+- [Styled-Components](https://styled-components.com/)  
+- TypeScript   
+- HTML5 + TSX
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Estrutura do Projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+📂 lista-contatos/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Botoes/
+│   │   └── Contato/
+│   ├── containers/
+│   │   ├── Formulario/
+│   │   ├── Header/
+│   │   └── ListaContatos/
+│   ├── models/
+│   │   └── Contato.ts
+│   ├── pages/
+│   │   ├── Cadastro/
+│   │   └── Home/
+│   ├── store/
+│   │   ├── reducers/
+│   │   │   ├── contatos.ts
+│   │   │   └── filtro.ts
+│   │   └── index.tsx
+│   ├── styles/
+│   │   ├── index.ts
+│   │   └── variaveis.ts
+│   ├── App.tsx
+│   └── main.tsx
+└── index.html
+├── package.json
+├── vite.config.js
+└── ...
