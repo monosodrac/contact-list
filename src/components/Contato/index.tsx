@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 import * as S from './styles';
 
-import TarefaClass from '../../models/Contato'
-import { editar, remover } from '../../store/reducers/contatos'
-import { Botao, BotaoSalvar } from '../../styles'
+import ContatoClass from '../../models/Contato'
+import { editar, remover } from '../../store/reducers/contatos';
+import { Botao, BotaoSalvar, Campo, CampoMask } from '../../styles';
 
-type Props = TarefaClass
+type Props = ContatoClass;
 
-const Tarefa = ({
+const Contato = ({
     email: emailOriginal,
     telefone: telefoneOriginal,
     nome,
@@ -46,12 +47,13 @@ const Tarefa = ({
                     {nome}
                 </S.Titulo>
             </label>
-            <S.Descricao
+            <CampoMask
+                mask="(00) 00000-0000"
                 disabled={!estaEditando}
                 value={telefone}
-                onChange={(evento) => setTelefone(evento.target.value)}
+                onChange={(evento: React.ChangeEvent<HTMLInputElement>) => setTelefone(evento.target.value)}
             />
-            <S.Descricao
+            <Campo
                 disabled={!estaEditando}
                 value={email}
                 onChange={(evento) => setEmail(evento.target.value)}
@@ -90,4 +92,4 @@ const Tarefa = ({
         </S.Card>
     )
 }
-export default Tarefa
+export default Contato

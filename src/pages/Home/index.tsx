@@ -1,13 +1,13 @@
-import BotaoAdicionar from '../../components/BotaoAdicionar'
-import BarraLateral from '../../containers/BarraLateral'
-import ListaContatos from '../../containers/ListaContatos'
+import { BotaoAdicionar } from '../../components/Botoes';
+import Header from '../../containers/Header';
+import ListaContatos from '../../containers/ListaContatos';
 
 const Home = () => (
     <>
-        <BarraLateral mostrarFiltros />
+        <Header mostrarFiltros />
         <ListaContatos />
         <BotaoAdicionar />
     </>
-)
+);
 
-export default Home
+export default Home;

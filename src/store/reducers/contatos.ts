@@ -12,19 +12,31 @@ const initialState: ContatosState = {
             id: 1,
             nome: 'Matheus',
             email: 'matheus@provedor.com',
-            telefone: '11998567854',
+            telefone: '(11) 99856-7854',
         },
         {
             id: 2,
             nome: 'Rodrigo',
             email: 'rodrigo@provedor.com',
-            telefone: '11991325487',
+            telefone: '(11) 99132-5487',
         },
         {
             id: 3,
             nome: 'Carla',
-            email: 'carla@@provedor.com',
-            telefone: '11968579426',
+            email: 'carla@provedor.com',
+            telefone: '(11) 96857-9426',
+        },
+        {
+            id: 4,
+            nome: 'Charles',
+            email: 'charles@provedor.com',
+            telefone: '(11) 99858-1985',
+        },
+        {
+            id: 5,
+            nome: 'Carolina',
+            email: 'carolina@provedor.com',
+            telefone: '(11) 99854-2657',
         },
     ]
 }

@@ -1,31 +1,23 @@
 import styled from 'styled-components'
+import { IMaskInput } from 'react-imask'
 
 export const Form = styled.form`
-  max-width: 457px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
   font-size: 14px;
   font-weight: blod;
   color: #666666;
-
-  textArea {
-    resize: none;
-    margin: 16px 0;
-  }
 `
 
-export const Opcoes = styled.div`
-  margin-bottom: 16px;
-
-  p {
-    margin-bottom: 6px;
-  }
-
-  label {
-    margin-right: 6px;
-  }
-`
-
-export const Opcao = styled.div`
-  display: inline;
-  text-transform: capitalize;
+export const CampoMask = styled(IMaskInput)`
+    padding: 8px;
+    border-radius: 8px;
+    border-color: #666666;
+    width: 100%;
+    font-weight: bold;
+    background-color: '#fff';
+    color: #666666;
 `

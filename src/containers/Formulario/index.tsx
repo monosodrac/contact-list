@@ -1,18 +1,18 @@
-import { FormEvent, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import React, { FormEvent, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { cadastrar } from '../../store/reducers/contatos'
-import { BotaoSalvar, Campo, MainContainer, Titulo } from '../../styles'
+import { cadastrar } from '../../store/reducers/contatos';
+import { BotaoSalvar, Campo, MainContainer, Titulo, CampoMask } from '../../styles';
 import { Form } from './styles';
 
 const Formulario = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const [nome, setNome] = useState('')
-  const [email, setEmail] = useState('')
-  const [telefone, setTelefone] = useState('')
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [telefone, setTelefone] = useState('');
 
 
   const cadastrarContato = (evento: FormEvent) => {
@@ -24,9 +24,9 @@ const Formulario = () => {
         telefone,
         id: 0
       })
-    )
-    navigate('/')
-  }
+    );
+    navigate('/');
+  };
 
   return (
     <MainContainer>
@@ -37,23 +37,26 @@ const Formulario = () => {
           onChange={(evento) => setNome(evento.target.value)}
           type="text"
           placeholder="Nome do Contato"
+          required
         />
-        <Campo
+        <CampoMask
+          mask="(00) 00000-0000"
           value={telefone}
-          onChange={({ target }) => setTelefone(target.value)}
-          as="textarea"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTelefone(e.target.value)}
           placeholder="Telefone"
+          required
         />
         <Campo
           value={email}
           onChange={({ target }) => setEmail(target.value)}
-          as="textarea"
           placeholder="E-mail"
+          type='email'
+          required
         />
         <BotaoSalvar type="submit">Cadastrar</BotaoSalvar>
       </Form>
     </MainContainer>
-  )
-}
+  );
+};
 
-export default Formulario
+export default Formulario;

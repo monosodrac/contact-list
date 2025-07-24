@@ -31,7 +31,7 @@ export const Tag = styled.span`
   margin-right: 16px;
   display: inline-block;
 `
-export const Descricao = styled.textarea`
+export const Descricao = styled.input`
   color: #8b8b8b;
   font-size: 14px;
   line-height: 24px;
@@ -45,6 +45,8 @@ export const Descricao = styled.textarea`
   background-color: transparent;
 `
 export const BarraAcoes = styled.div`
+  display: flex;
+  justify-content: space-around;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 16px;
 `

@@ -1,5 +1,7 @@
-import styled, { createGlobalStyle } from 'styled-components'
-import variaveis from './variaveis'
+import styled, { createGlobalStyle } from 'styled-components';
+import { IMaskInput } from 'react-imask';
+
+import variaveis from './variaveis';
 
 const EstiloGlobal = createGlobalStyle`
     * {
@@ -10,31 +12,48 @@ const EstiloGlobal = createGlobalStyle`
         list-style:none;
     }
 `
+
 export const Container = styled.div`
-    display: grid;
-    grid-template-columns: 224px auto;
+    display: flex;
+    flex-direction: column;
 `
+
 export const MainContainer = styled.main`
+    margin: 0 auto;
     padding: 0 40px;
-    height: 100vh;
-    overflow-y: scroll;
 `
+
 export const Titulo = styled.h2`
-    font-size: 18px;
-    font-weight: bold;
     display: block;
+    text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
-`
-export const Campo = styled.input`
-    padding: 8px;
-    background-color: '#fff';
-    border-radius: 8px;
+    font-size: 18px;
     font-weight: bold;
-    color: #666666;
+`
+
+export const Campo = styled.input`
+    margin: 1rem 0;
+    padding: 8px;
+    border-radius: 8px;
     border-color: #666666;
     width: 100%;
+    font-weight: bold;
+    background-color: '#fff';
+    color: #666666;
 `
+
+export const CampoMask = styled(IMaskInput)`
+    padding: 8px;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border-color: #666666;
+    width: 100%;
+    font-weight: bold;
+    background-color: '#fff';
+    color: #666666;
+`
+
 export const Botao = styled.button`
     font-weight: bold;
     font-size: 12px;
@@ -46,6 +65,7 @@ export const Botao = styled.button`
     border-radius: 8px;
     margin-right: 8px;
 `
+
 export const BotaoSalvar = styled(Botao)`
     background-color: ${variaveis.verde};
 `
