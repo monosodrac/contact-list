@@ -30,7 +30,7 @@ const Formulario = () => {
 
   return (
     <MainContainer>
-      <Titulo>Nova Contato</Titulo>
+      <Titulo>Novo Contato</Titulo>
       <Form onSubmit={cadastrarContato}>
         <Campo
           value={nome}

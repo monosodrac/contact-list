@@ -29,9 +29,9 @@ const ListaDeContatos = () => {
         const complementacao = nome !== undefined && nome.length > 0 ? `"${nome}";` : '';
 
         if (!complementacao) {
-            mensagem = `${quantidade} contato(s) encontrada(s)`;
+            mensagem = `${quantidade} contato(s) encontrado(s)`;
         } else {
-            mensagem = `${quantidade} contato(s) encontrada(s) como: ${complementacao}`;
+            mensagem = `${quantidade} contato(s) encontrado(s) como: ${complementacao}`;
         };
         return mensagem;
     };
