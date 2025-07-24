@@ -19,8 +19,13 @@ export const Container = styled.div`
 `
 
 export const MainContainer = styled.main`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     padding: 0 40px;
+    min-height: 100vh;
 `
 
 export const Titulo = styled.h2`

@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { cadastrar } from '../../store/reducers/contatos';
-import { BotaoSalvar, Campo, MainContainer, Titulo, CampoMask } from '../../styles';
-import { Form } from './styles';
+import { Campo, MainContainer, Titulo, CampoMask } from '../../styles';
+import { BotaoCadastrar, Form } from './styles';
 
 const Formulario = () => {
   const dispatch = useDispatch();
@@ -53,7 +53,7 @@ const Formulario = () => {
           type='email'
           required
         />
-        <BotaoSalvar type="submit">Cadastrar</BotaoSalvar>
+        <BotaoCadastrar type="submit">Cadastrar</BotaoCadastrar>
       </Form>
     </MainContainer>
   );
